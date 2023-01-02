@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package services.calculate.v1;
+
+import "calculator/v1/calculator.proto";
+
+service CalculateService {
+  rpc Addition(AdditionRequest) returns (AdditionResponse) {}
+  rpc Division(DivisionRequest) returns (DivisionResponse) {}
+  rpc Additions(stream AdditionsRequest) returns (stream AdditionsResponse) {}
+}
+
+message AdditionRequest {
+  calculator.v1.Operation operation = 1;
+  double operator_first = 2;
+  double operator_second = 3;
+}
+
+message AdditionResponse {
+  double result = 1;
+}
+
+message AdditionsRequest {
+  calculator.v1.Operation operation = 1;
+  double operator_first = 2;
+  double operator_second = 3;
+}
+
+message AdditionsResponse {
+  double result = 1;
+}
+
+message DivisionRequest {
+  calculator.v1.Operation operation = 1;
+  double operator_first = 2;
+  double operator_second = 3;
+}
+
+message DivisionResponse {
+  double result = 1;
+}
