@@ -43,8 +43,9 @@ jobs:
         # After generation we need a way and a place to publish the documentation
         # built in this step
       - name: Install doc tools (protoc-gen-doc)
-        uses: jaxxstorm/action-install-gh-release@v1.5.0
+        uses: jaxxstorm/action-install-gh-release@v1.9.0
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           repo: pseudomuto/protoc-gen-doc
           tag: v1.5.1
           extension-matching: disable
@@ -60,7 +61,7 @@ jobs:
       - name: Copy proto sources from nodejs
         run: |
           mkdir -p nodejs/src
-          cp -rv src/oyster nodejs/src
+          cp -rv src nodejs/src
 
       - name: Git setup
         run: |
