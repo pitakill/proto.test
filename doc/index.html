@@ -194,18 +194,34 @@
             <ul>
               
                 <li>
-                  <a href="#services.calculate.v1.Request"><span class="badge">M</span>Request</a>
+                  <a href="#services.calculate.v1.AdditionRequest"><span class="badge">M</span>AdditionRequest</a>
                 </li>
               
                 <li>
-                  <a href="#services.calculate.v1.Response"><span class="badge">M</span>Response</a>
+                  <a href="#services.calculate.v1.AdditionResponse"><span class="badge">M</span>AdditionResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#services.calculate.v1.AdditionsRequest"><span class="badge">M</span>AdditionsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#services.calculate.v1.AdditionsResponse"><span class="badge">M</span>AdditionsResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#services.calculate.v1.DivisionRequest"><span class="badge">M</span>DivisionRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#services.calculate.v1.DivisionResponse"><span class="badge">M</span>DivisionResponse</a>
                 </li>
               
               
               
               
                 <li>
-                  <a href="#services.calculate.v1.Calculate"><span class="badge">S</span>Calculate</a>
+                  <a href="#services.calculate.v1.CalculateService"><span class="badge">S</span>CalculateService</a>
                 </li>
               
             </ul>
@@ -234,31 +250,31 @@
           <tbody>
             
               <tr>
-                <td>UNKNOWN</td>
+                <td>OPERATION_UNSPECIFIED</td>
                 <td>0</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>ADDITION</td>
+                <td>OPERATION_ADDITION</td>
                 <td>1</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>SUBTRACTION</td>
+                <td>OPERATION_SUBTRACTION</td>
                 <td>2</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>MULTIPLICATION</td>
+                <td>OPERATION_MULTIPLICATION</td>
                 <td>3</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>DIVISION</td>
+                <td>OPERATION_DIVISION</td>
                 <td>4</td>
                 <td><p></p></td>
               </tr>
@@ -278,7 +294,7 @@
       <p></p>
 
       
-        <h3 id="services.calculate.v1.Request">Request</h3>
+        <h3 id="services.calculate.v1.AdditionRequest">AdditionRequest</h3>
         <p></p>
 
         
@@ -316,7 +332,131 @@
 
         
       
-        <h3 id="services.calculate.v1.Response">Response</h3>
+        <h3 id="services.calculate.v1.AdditionResponse">AdditionResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>result</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="services.calculate.v1.AdditionsRequest">AdditionsRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>operation</td>
+                  <td><a href="#calculator.v1.Operation">calculator.v1.Operation</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>operator_first</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>operator_second</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="services.calculate.v1.AdditionsResponse">AdditionsResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>result</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="services.calculate.v1.DivisionRequest">DivisionRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>operation</td>
+                  <td><a href="#calculator.v1.Operation">calculator.v1.Operation</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>operator_first</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>operator_second</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="services.calculate.v1.DivisionResponse">DivisionResponse</h3>
         <p></p>
 
         
@@ -346,7 +486,7 @@
       
 
       
-        <h3 id="services.calculate.v1.Calculate">Calculate</h3>
+        <h3 id="services.calculate.v1.CalculateService">CalculateService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -355,23 +495,23 @@
           <tbody>
             
               <tr>
-                <td>addition</td>
-                <td><a href="#services.calculate.v1.Request">Request</a></td>
-                <td><a href="#services.calculate.v1.Response">Response</a></td>
+                <td>Addition</td>
+                <td><a href="#services.calculate.v1.AdditionRequest">AdditionRequest</a></td>
+                <td><a href="#services.calculate.v1.AdditionResponse">AdditionResponse</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>division</td>
-                <td><a href="#services.calculate.v1.Request">Request</a></td>
-                <td><a href="#services.calculate.v1.Response">Response</a></td>
+                <td>Division</td>
+                <td><a href="#services.calculate.v1.DivisionRequest">DivisionRequest</a></td>
+                <td><a href="#services.calculate.v1.DivisionResponse">DivisionResponse</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>additions</td>
-                <td><a href="#services.calculate.v1.Request">Request</a> stream</td>
-                <td><a href="#services.calculate.v1.Response">Response</a> stream</td>
+                <td>Additions</td>
+                <td><a href="#services.calculate.v1.AdditionsRequest">AdditionsRequest</a> stream</td>
+                <td><a href="#services.calculate.v1.AdditionsResponse">AdditionsResponse</a> stream</td>
                 <td><p></p></td>
               </tr>
             

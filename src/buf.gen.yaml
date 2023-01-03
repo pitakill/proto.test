@@ -1,6 +1,8 @@
 version: v1
 managed:
   enabled: true
+  go_package_prefix:
+    default: github.com/pitakill/proto.test/go
 plugins:
   # Documentation
   - name: doc
@@ -41,13 +43,12 @@ plugins:
     path: ../protoc-gen-grpc-java
 
   # Go
-  # Uncomment for Go stubs
-  # - plugin: buf.build/protocolbuffers/go:v1.28.1
-  #   out: ../go
-  #   opt: paths=source_relative
-  #
-  # - plugin: buf.build/grpc/go:v1.2.0
-  #   out: ../go
-  #   opt:
-  #     - paths=source_relative
-  #     - require_unimplemented_servers=false
+  - plugin: buf.build/protocolbuffers/go:v1.28.1
+    out: ../go
+    opt: paths=source_relative
+
+  - plugin: buf.build/grpc/go:v1.2.0
+    out: ../go
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false

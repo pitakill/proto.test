@@ -7,10 +7,14 @@
     - [Operation](#calculator-v1-Operation)
   
 - [services/calculate/v1/calculate.proto](#services_calculate_v1_calculate-proto)
-    - [Request](#services-calculate-v1-Request)
-    - [Response](#services-calculate-v1-Response)
+    - [AdditionRequest](#services-calculate-v1-AdditionRequest)
+    - [AdditionResponse](#services-calculate-v1-AdditionResponse)
+    - [AdditionsRequest](#services-calculate-v1-AdditionsRequest)
+    - [AdditionsResponse](#services-calculate-v1-AdditionsResponse)
+    - [DivisionRequest](#services-calculate-v1-DivisionRequest)
+    - [DivisionResponse](#services-calculate-v1-DivisionResponse)
   
-    - [Calculate](#services-calculate-v1-Calculate)
+    - [CalculateService](#services-calculate-v1-CalculateService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -32,11 +36,11 @@
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| UNKNOWN | 0 |  |
-| ADDITION | 1 |  |
-| SUBTRACTION | 2 |  |
-| MULTIPLICATION | 3 |  |
-| DIVISION | 4 |  |
+| OPERATION_UNSPECIFIED | 0 |  |
+| OPERATION_ADDITION | 1 |  |
+| OPERATION_SUBTRACTION | 2 |  |
+| OPERATION_MULTIPLICATION | 3 |  |
+| OPERATION_DIVISION | 4 |  |
 
 
  
@@ -54,9 +58,9 @@
 
 
 
-<a name="services-calculate-v1-Request"></a>
+<a name="services-calculate-v1-AdditionRequest"></a>
 
-### Request
+### AdditionRequest
 
 
 
@@ -71,9 +75,73 @@
 
 
 
-<a name="services-calculate-v1-Response"></a>
+<a name="services-calculate-v1-AdditionResponse"></a>
 
-### Response
+### AdditionResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="services-calculate-v1-AdditionsRequest"></a>
+
+### AdditionsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| operation | [calculator.v1.Operation](#calculator-v1-Operation) |  |  |
+| operator_first | [double](#double) |  |  |
+| operator_second | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="services-calculate-v1-AdditionsResponse"></a>
+
+### AdditionsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="services-calculate-v1-DivisionRequest"></a>
+
+### DivisionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| operation | [calculator.v1.Operation](#calculator-v1-Operation) |  |  |
+| operator_first | [double](#double) |  |  |
+| operator_second | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="services-calculate-v1-DivisionResponse"></a>
+
+### DivisionResponse
 
 
 
@@ -92,16 +160,16 @@
  
 
 
-<a name="services-calculate-v1-Calculate"></a>
+<a name="services-calculate-v1-CalculateService"></a>
 
-### Calculate
+### CalculateService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| addition | [Request](#services-calculate-v1-Request) | [Response](#services-calculate-v1-Response) |  |
-| division | [Request](#services-calculate-v1-Request) | [Response](#services-calculate-v1-Response) |  |
-| additions | [Request](#services-calculate-v1-Request) stream | [Response](#services-calculate-v1-Response) stream |  |
+| Addition | [AdditionRequest](#services-calculate-v1-AdditionRequest) | [AdditionResponse](#services-calculate-v1-AdditionResponse) |  |
+| Division | [DivisionRequest](#services-calculate-v1-DivisionRequest) | [DivisionResponse](#services-calculate-v1-DivisionResponse) |  |
+| Additions | [AdditionsRequest](#services-calculate-v1-AdditionsRequest) stream | [AdditionsResponse](#services-calculate-v1-AdditionsResponse) stream |  |
 
  
 

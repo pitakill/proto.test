@@ -16,27 +16,27 @@
           "description": "",
           "values": [
             {
-              "name": "UNKNOWN",
+              "name": "OPERATION_UNSPECIFIED",
               "number": "0",
               "description": ""
             },
             {
-              "name": "ADDITION",
+              "name": "OPERATION_ADDITION",
               "number": "1",
               "description": ""
             },
             {
-              "name": "SUBTRACTION",
+              "name": "OPERATION_SUBTRACTION",
               "number": "2",
               "description": ""
             },
             {
-              "name": "MULTIPLICATION",
+              "name": "OPERATION_MULTIPLICATION",
               "number": "3",
               "description": ""
             },
             {
-              "name": "DIVISION",
+              "name": "OPERATION_DIVISION",
               "number": "4",
               "description": ""
             }
@@ -59,9 +59,9 @@
       "extensions": [],
       "messages": [
         {
-          "name": "Request",
-          "longName": "Request",
-          "fullName": "services.calculate.v1.Request",
+          "name": "AdditionRequest",
+          "longName": "AdditionRequest",
+          "fullName": "services.calculate.v1.AdditionRequest",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -107,9 +107,153 @@
           ]
         },
         {
-          "name": "Response",
-          "longName": "Response",
-          "fullName": "services.calculate.v1.Response",
+          "name": "AdditionResponse",
+          "longName": "AdditionResponse",
+          "fullName": "services.calculate.v1.AdditionResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "result",
+              "description": "",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AdditionsRequest",
+          "longName": "AdditionsRequest",
+          "fullName": "services.calculate.v1.AdditionsRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "operation",
+              "description": "",
+              "label": "",
+              "type": "Operation",
+              "longType": "calculator.v1.Operation",
+              "fullType": "calculator.v1.Operation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "operator_first",
+              "description": "",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "operator_second",
+              "description": "",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "AdditionsResponse",
+          "longName": "AdditionsResponse",
+          "fullName": "services.calculate.v1.AdditionsResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "result",
+              "description": "",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DivisionRequest",
+          "longName": "DivisionRequest",
+          "fullName": "services.calculate.v1.DivisionRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "operation",
+              "description": "",
+              "label": "",
+              "type": "Operation",
+              "longType": "calculator.v1.Operation",
+              "fullType": "calculator.v1.Operation",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "operator_first",
+              "description": "",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "operator_second",
+              "description": "",
+              "label": "",
+              "type": "double",
+              "longType": "double",
+              "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DivisionResponse",
+          "longName": "DivisionResponse",
+          "fullName": "services.calculate.v1.DivisionResponse",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -133,45 +277,45 @@
       ],
       "services": [
         {
-          "name": "Calculate",
-          "longName": "Calculate",
-          "fullName": "services.calculate.v1.Calculate",
+          "name": "CalculateService",
+          "longName": "CalculateService",
+          "fullName": "services.calculate.v1.CalculateService",
           "description": "",
           "methods": [
             {
-              "name": "addition",
+              "name": "Addition",
               "description": "",
-              "requestType": "Request",
-              "requestLongType": "Request",
-              "requestFullType": "services.calculate.v1.Request",
+              "requestType": "AdditionRequest",
+              "requestLongType": "AdditionRequest",
+              "requestFullType": "services.calculate.v1.AdditionRequest",
               "requestStreaming": false,
-              "responseType": "Response",
-              "responseLongType": "Response",
-              "responseFullType": "services.calculate.v1.Response",
+              "responseType": "AdditionResponse",
+              "responseLongType": "AdditionResponse",
+              "responseFullType": "services.calculate.v1.AdditionResponse",
               "responseStreaming": false
             },
             {
-              "name": "division",
+              "name": "Division",
               "description": "",
-              "requestType": "Request",
-              "requestLongType": "Request",
-              "requestFullType": "services.calculate.v1.Request",
+              "requestType": "DivisionRequest",
+              "requestLongType": "DivisionRequest",
+              "requestFullType": "services.calculate.v1.DivisionRequest",
               "requestStreaming": false,
-              "responseType": "Response",
-              "responseLongType": "Response",
-              "responseFullType": "services.calculate.v1.Response",
+              "responseType": "DivisionResponse",
+              "responseLongType": "DivisionResponse",
+              "responseFullType": "services.calculate.v1.DivisionResponse",
               "responseStreaming": false
             },
             {
-              "name": "additions",
+              "name": "Additions",
               "description": "",
-              "requestType": "Request",
-              "requestLongType": "Request",
-              "requestFullType": "services.calculate.v1.Request",
+              "requestType": "AdditionsRequest",
+              "requestLongType": "AdditionsRequest",
+              "requestFullType": "services.calculate.v1.AdditionsRequest",
               "requestStreaming": true,
-              "responseType": "Response",
-              "responseLongType": "Response",
-              "responseFullType": "services.calculate.v1.Response",
+              "responseType": "AdditionsResponse",
+              "responseLongType": "AdditionsResponse",
+              "responseFullType": "services.calculate.v1.AdditionsResponse",
               "responseStreaming": true
             }
           ]
