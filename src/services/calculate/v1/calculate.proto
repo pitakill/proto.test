@@ -28,6 +28,7 @@ message AdditionsRequest {
 
 message AdditionsResponse {
   double result = 1;
+  map<string, calculator.v1.Error> errors = 2;
 }
 
 message DivisionRequest {
