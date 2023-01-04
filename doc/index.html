@@ -180,6 +180,10 @@
               
               
                 <li>
+                  <a href="#calculator.v1.Error"><span class="badge">E</span>Error</a>
+                </li>
+              
+                <li>
                   <a href="#calculator.v1.Operation"><span class="badge">E</span>Operation</a>
                 </li>
               
@@ -207,6 +211,10 @@
               
                 <li>
                   <a href="#services.calculate.v1.AdditionsResponse"><span class="badge">M</span>AdditionsResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#services.calculate.v1.AdditionsResponse.ErrorsEntry"><span class="badge">M</span>AdditionsResponse.ErrorsEntry</a>
                 </li>
               
                 <li>
@@ -240,6 +248,35 @@
 
       
 
+      
+        <h3 id="calculator.v1.Error">Error</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ERROR_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ERROR_WRONG_OPERATION</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ERROR_DIVISION_BY_ZERO</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
         <h3 id="calculator.v1.Operation">Operation</h3>
         <p></p>
@@ -407,6 +444,44 @@
                 <tr>
                   <td>result</td>
                   <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>errors</td>
+                  <td><a href="#services.calculate.v1.AdditionsResponse.ErrorsEntry">AdditionsResponse.ErrorsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="services.calculate.v1.AdditionsResponse.ErrorsEntry">AdditionsResponse.ErrorsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#calculator.v1.Error">calculator.v1.Error</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

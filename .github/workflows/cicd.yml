@@ -59,8 +59,8 @@ jobs:
 
       - name: Copy proto sources from nodejs
         run: |
-          mkdir -p nodejs/src
           cp -rv src nodejs/src
+          rm nodejs/src/buf*.yml
 
       - name: Git setup
         run: |
