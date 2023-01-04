@@ -10,6 +10,29 @@
       "hasServices": false,
       "enums": [
         {
+          "name": "Error",
+          "longName": "Error",
+          "fullName": "calculator.v1.Error",
+          "description": "",
+          "values": [
+            {
+              "name": "ERROR_UNSPECIFIED",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "ERROR_WRONG_OPERATION",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "ERROR_DIVISION_BY_ZERO",
+              "number": "2",
+              "description": ""
+            }
+          ]
+        },
+        {
           "name": "Operation",
           "longName": "Operation",
           "fullName": "calculator.v1.Operation",
@@ -195,6 +218,54 @@
               "type": "double",
               "longType": "double",
               "fullType": "double",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "errors",
+              "description": "",
+              "label": "repeated",
+              "type": "ErrorsEntry",
+              "longType": "AdditionsResponse.ErrorsEntry",
+              "fullType": "services.calculate.v1.AdditionsResponse.ErrorsEntry",
+              "ismap": true,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ErrorsEntry",
+          "longName": "AdditionsResponse.ErrorsEntry",
+          "fullName": "services.calculate.v1.AdditionsResponse.ErrorsEntry",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "value",
+              "description": "",
+              "label": "",
+              "type": "Error",
+              "longType": "calculator.v1.Error",
+              "fullType": "calculator.v1.Error",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",

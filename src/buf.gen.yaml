@@ -1,6 +1,8 @@
 version: v1
 managed:
   enabled: true
+  java_package_prefix:
+    default: com.oyster.entities.pb
   go_package_prefix:
     default: github.com/pitakill/proto.test/go
 plugins:

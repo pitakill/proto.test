@@ -199,7 +199,8 @@ type AdditionsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Result float64 `protobuf:"fixed64,1,opt,name=result,proto3" json:"result,omitempty"`
+	Result float64             `protobuf:"fixed64,1,opt,name=result,proto3" json:"result,omitempty"`
+	Errors map[string]v1.Error `protobuf:"bytes,2,rep,name=errors,proto3" json:"errors,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3,enum=calculator.v1.Error"`
 }
 
 func (x *AdditionsResponse) Reset() {
@@ -239,6 +240,13 @@ func (x *AdditionsResponse) GetResult() float64 {
 		return x.Result
 	}
 	return 0
+}
+
+func (x *AdditionsResponse) GetErrors() map[string]v1.Error {
+	if x != nil {
+		return x.Errors
+	}
+	return nil
 }
 
 type DivisionRequest struct {
@@ -382,9 +390,19 @@ var file_services_calculate_v1_calculate_proto_rawDesc = []byte{
 	0x72, 0x61, 0x74, 0x6f, 0x72, 0x46, 0x69, 0x72, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x6f, 0x70,
 	0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x5f, 0x73, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x18, 0x03, 0x20,
 	0x01, 0x28, 0x01, 0x52, 0x0e, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x53, 0x65, 0x63,
-	0x6f, 0x6e, 0x64, 0x22, 0x2b, 0x0a, 0x11, 0x41, 0x64, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75,
-	0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x01, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74,
+	0x6f, 0x6e, 0x64, 0x22, 0xca, 0x01, 0x0a, 0x11, 0x41, 0x64, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73,
+	0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x01, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x12, 0x4c, 0x0a, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x34, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x61, 0x6c,
+	0x63, 0x75, 0x6c, 0x61, 0x74, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x64, 0x69, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x45, 0x72, 0x72, 0x6f,
+	0x72, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x06, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x1a,
+	0x4f, 0x0a, 0x0b, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10,
+	0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79,
+	0x12, 0x2a, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x14, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x76, 0x31, 0x2e,
+	0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01,
 	0x22, 0x99, 0x01, 0x0a, 0x0f, 0x44, 0x69, 0x76, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x12, 0x36, 0x0a, 0x09, 0x6f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x69, 0x6f,
 	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c,
@@ -447,7 +465,7 @@ func file_services_calculate_v1_calculate_proto_rawDescGZIP() []byte {
 	return file_services_calculate_v1_calculate_proto_rawDescData
 }
 
-var file_services_calculate_v1_calculate_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_services_calculate_v1_calculate_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_services_calculate_v1_calculate_proto_goTypes = []interface{}{
 	(*AdditionRequest)(nil),   // 0: services.calculate.v1.AdditionRequest
 	(*AdditionResponse)(nil),  // 1: services.calculate.v1.AdditionResponse
@@ -455,23 +473,27 @@ var file_services_calculate_v1_calculate_proto_goTypes = []interface{}{
 	(*AdditionsResponse)(nil), // 3: services.calculate.v1.AdditionsResponse
 	(*DivisionRequest)(nil),   // 4: services.calculate.v1.DivisionRequest
 	(*DivisionResponse)(nil),  // 5: services.calculate.v1.DivisionResponse
-	(v1.Operation)(0),         // 6: calculator.v1.Operation
+	nil,                       // 6: services.calculate.v1.AdditionsResponse.ErrorsEntry
+	(v1.Operation)(0),         // 7: calculator.v1.Operation
+	(v1.Error)(0),             // 8: calculator.v1.Error
 }
 var file_services_calculate_v1_calculate_proto_depIdxs = []int32{
-	6, // 0: services.calculate.v1.AdditionRequest.operation:type_name -> calculator.v1.Operation
-	6, // 1: services.calculate.v1.AdditionsRequest.operation:type_name -> calculator.v1.Operation
-	6, // 2: services.calculate.v1.DivisionRequest.operation:type_name -> calculator.v1.Operation
-	0, // 3: services.calculate.v1.CalculateService.Addition:input_type -> services.calculate.v1.AdditionRequest
-	4, // 4: services.calculate.v1.CalculateService.Division:input_type -> services.calculate.v1.DivisionRequest
-	2, // 5: services.calculate.v1.CalculateService.Additions:input_type -> services.calculate.v1.AdditionsRequest
-	1, // 6: services.calculate.v1.CalculateService.Addition:output_type -> services.calculate.v1.AdditionResponse
-	5, // 7: services.calculate.v1.CalculateService.Division:output_type -> services.calculate.v1.DivisionResponse
-	3, // 8: services.calculate.v1.CalculateService.Additions:output_type -> services.calculate.v1.AdditionsResponse
-	6, // [6:9] is the sub-list for method output_type
-	3, // [3:6] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	7, // 0: services.calculate.v1.AdditionRequest.operation:type_name -> calculator.v1.Operation
+	7, // 1: services.calculate.v1.AdditionsRequest.operation:type_name -> calculator.v1.Operation
+	6, // 2: services.calculate.v1.AdditionsResponse.errors:type_name -> services.calculate.v1.AdditionsResponse.ErrorsEntry
+	7, // 3: services.calculate.v1.DivisionRequest.operation:type_name -> calculator.v1.Operation
+	8, // 4: services.calculate.v1.AdditionsResponse.ErrorsEntry.value:type_name -> calculator.v1.Error
+	0, // 5: services.calculate.v1.CalculateService.Addition:input_type -> services.calculate.v1.AdditionRequest
+	4, // 6: services.calculate.v1.CalculateService.Division:input_type -> services.calculate.v1.DivisionRequest
+	2, // 7: services.calculate.v1.CalculateService.Additions:input_type -> services.calculate.v1.AdditionsRequest
+	1, // 8: services.calculate.v1.CalculateService.Addition:output_type -> services.calculate.v1.AdditionResponse
+	5, // 9: services.calculate.v1.CalculateService.Division:output_type -> services.calculate.v1.DivisionResponse
+	3, // 10: services.calculate.v1.CalculateService.Additions:output_type -> services.calculate.v1.AdditionsResponse
+	8, // [8:11] is the sub-list for method output_type
+	5, // [5:8] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_services_calculate_v1_calculate_proto_init() }
@@ -559,7 +581,7 @@ func file_services_calculate_v1_calculate_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_services_calculate_v1_calculate_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

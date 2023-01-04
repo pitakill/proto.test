@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [calculator/v1/calculator.proto](#calculator_v1_calculator-proto)
+    - [Error](#calculator-v1-Error)
     - [Operation](#calculator-v1-Operation)
   
 - [services/calculate/v1/calculate.proto](#services_calculate_v1_calculate-proto)
@@ -11,6 +12,7 @@
     - [AdditionResponse](#services-calculate-v1-AdditionResponse)
     - [AdditionsRequest](#services-calculate-v1-AdditionsRequest)
     - [AdditionsResponse](#services-calculate-v1-AdditionsResponse)
+    - [AdditionsResponse.ErrorsEntry](#services-calculate-v1-AdditionsResponse-ErrorsEntry)
     - [DivisionRequest](#services-calculate-v1-DivisionRequest)
     - [DivisionResponse](#services-calculate-v1-DivisionResponse)
   
@@ -27,6 +29,19 @@
 
 
  
+
+
+<a name="calculator-v1-Error"></a>
+
+### Error
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ERROR_UNSPECIFIED | 0 |  |
+| ERROR_WRONG_OPERATION | 1 |  |
+| ERROR_DIVISION_BY_ZERO | 2 |  |
+
 
 
 <a name="calculator-v1-Operation"></a>
@@ -116,6 +131,23 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | result | [double](#double) |  |  |
+| errors | [AdditionsResponse.ErrorsEntry](#services-calculate-v1-AdditionsResponse-ErrorsEntry) | repeated |  |
+
+
+
+
+
+
+<a name="services-calculate-v1-AdditionsResponse-ErrorsEntry"></a>
+
+### AdditionsResponse.ErrorsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [calculator.v1.Error](#calculator-v1-Error) |  |  |
 
 
 
