@@ -97,4 +97,4 @@ jobs:
           ./gradlew publish -Pversion=${{ steps.bump_version.outputs.tag }}
           cd ..
         env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
