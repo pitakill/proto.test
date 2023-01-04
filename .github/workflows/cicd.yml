@@ -57,6 +57,12 @@ jobs:
           buf generate
           cd ..
 
+      - name: Commit the built files
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: '["doc", "go"]'
+
       - name: Copy proto sources from nodejs
         run: |
           cp -rv src nodejs/src

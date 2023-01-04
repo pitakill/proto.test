@@ -5,15 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Install the `buf` CLI
-      - uses: bufbuild/buf-setup-action@v1
+
+      - name: Install `buf` CLI
+        uses: bufbuild/buf-setup-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
-      # Run lint only in the `src` sub-directory
-      - uses: bufbuild/buf-lint-action@v1
+
+      - name: Lint `src` sub-directory
+        uses: bufbuild/buf-lint-action@v1
         with:
           input: src
-      - uses: bufbuild/buf-breaking-action@v1
+
+      - name: Verify against previous version
+        uses: bufbuild/buf-breaking-action@v1
         with:
           input: src
           against: "https://github.com/pitakill/proto.test.git#branch=main,subdir=src"
