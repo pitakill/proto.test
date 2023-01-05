@@ -156,7 +156,7 @@ func RegisterCalculateServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/services.calculate.v1.CalculateService/Addition", runtime.WithHTTPPathPattern("/services.calculate.v1.CalculateService/Addition"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/services.calculate.v1.CalculateService/Addition", runtime.WithHTTPPathPattern("/v1/calculate/addition"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -252,7 +252,7 @@ func RegisterCalculateServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/services.calculate.v1.CalculateService/Addition", runtime.WithHTTPPathPattern("/services.calculate.v1.CalculateService/Addition"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/services.calculate.v1.CalculateService/Addition", runtime.WithHTTPPathPattern("/v1/calculate/addition"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -316,7 +316,7 @@ func RegisterCalculateServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 }
 
 var (
-	pattern_CalculateService_Addition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"services.calculate.v1.CalculateService", "Addition"}, ""))
+	pattern_CalculateService_Addition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "calculate", "addition"}, ""))
 
 	pattern_CalculateService_Division_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"services.calculate.v1.CalculateService", "Division"}, ""))
 
