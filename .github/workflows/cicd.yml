@@ -51,6 +51,16 @@ jobs:
           rename-to: protoc-gen-doc
           chmod: 0755
 
+      - name: Install gateway tools (protoc-gen-grpc-gateway)
+        uses: jaxxstorm/action-install-gh-release@v1.9.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repo: grpc-ecosystem/grpc-gateway
+          tag: v2.15.0
+          extension-matching: disable
+          rename-to: protoc-gen-grpc-gateway
+          chmod: 0755
+
       - name: Generate all the stubs
         run: |
           cd src
