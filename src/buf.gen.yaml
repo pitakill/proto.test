@@ -54,3 +54,10 @@ plugins:
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
+
+  # Go reverse proxy
+  - name: grpc-gateway
+    out: ../go
+    opt:
+      - paths=source_relative
+      - generate_unbound_methods=true
