@@ -2,6 +2,11 @@ syntax = "proto3";
 
 package calculator.v1;
 
+option go_package = "github.com/pitakill/proto.test/go/calculator/v1;calculatorv1";
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "CalculatorPb";
+option java_package = "net.pitakill.caculator.v1";
+
 enum Operation {
   OPERATION_UNSPECIFIED = 0;
   OPERATION_ADDITION = 1;
