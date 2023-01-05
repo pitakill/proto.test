@@ -2,10 +2,16 @@ syntax = "proto3";
 
 package services.calculate.v1;
 
+import "google/api/annotations.proto";
 import "calculator/v1/calculator.proto";
 
 service CalculateService {
-  rpc Addition(AdditionRequest) returns (AdditionResponse) {}
+  rpc Addition(AdditionRequest) returns (AdditionResponse) {
+    option(google.api.http) = {
+      post: "/v1/calculate/addition"
+      body: "*"
+    };
+  }
   rpc Division(DivisionRequest) returns (DivisionResponse) {}
   rpc Additions(stream AdditionsRequest) returns (stream AdditionsResponse) {}
 }
