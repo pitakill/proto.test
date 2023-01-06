@@ -363,18 +363,7 @@
               "responseType": "AdditionResponse",
               "responseLongType": "AdditionResponse",
               "responseFullType": "services.calculate.v1.AdditionResponse",
-              "responseStreaming": false,
-              "options": {
-                "google.api.http": {
-                  "rules": [
-                    {
-                      "method": "POST",
-                      "pattern": "/v1/calculate/addition",
-                      "body": "*"
-                    }
-                  ]
-                }
-              }
+              "responseStreaming": false
             },
             {
               "name": "Division",
