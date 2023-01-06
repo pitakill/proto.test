@@ -1,0 +1,12 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: services.calculate.v1.CalculateService.Addition
+      post: "/v1/calculate/addition"
+      body: "*" 
+
+    - selector: services.calculate.v1.CalculateService.Division
+      post: "/v1/calculate/division"
+      body: "*"

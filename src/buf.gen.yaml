@@ -1,10 +1,10 @@
 version: v1
 managed:
   enabled: true
-  # java_package_prefix:
-  #   default: com.oyster.entities.pb
-  # go_package_prefix:
-  #   default: github.com/pitakill/proto.test/go
+  java_package_prefix:
+    default: net.pitakill.services.calculate.v1
+  go_package_prefix:
+    default: github.com/pitakill/proto.test/go
 plugins:
   # Documentation
   - name: doc
@@ -58,5 +58,7 @@ plugins:
   # Go reverse proxy
   - name: grpc-gateway
     out: ../go
+    strategy: all
     opt:
       - paths=source_relative
+      - grpc_api_configuration=services/calculate/v1/calculate.yaml
