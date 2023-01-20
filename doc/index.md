@@ -98,7 +98,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| result | [double](#double) |  |  |
+| result | [string](#string) |  |  |
 
 
 
