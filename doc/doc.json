@@ -88,7 +88,7 @@
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
-          "hasOneofs": false,
+          "hasOneofs": true,
           "extensions": [],
           "fields": [
             {
@@ -118,10 +118,22 @@
             {
               "name": "operator_second",
               "description": "",
-              "label": "",
+              "label": "optional",
               "type": "double",
               "longType": "double",
               "fullType": "double",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "_operator_second",
+              "defaultValue": ""
+            },
+            {
+              "name": "map",
+              "description": "",
+              "label": "",
+              "type": "Struct",
+              "longType": "google.protobuf.Struct",
+              "fullType": "google.protobuf.Struct",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
