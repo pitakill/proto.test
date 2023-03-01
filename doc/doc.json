@@ -88,7 +88,7 @@
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
-          "hasOneofs": true,
+          "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
@@ -118,13 +118,13 @@
             {
               "name": "operator_second",
               "description": "",
-              "label": "optional",
+              "label": "",
               "type": "double",
               "longType": "double",
               "fullType": "double",
               "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "_operator_second",
+              "isoneof": false,
+              "oneofdecl": "",
               "defaultValue": ""
             },
             {

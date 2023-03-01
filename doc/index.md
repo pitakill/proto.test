@@ -83,7 +83,7 @@
 | ----- | ---- | ----- | ----------- |
 | operation | [calculator.v1.Operation](#calculator-v1-Operation) |  |  |
 | operator_first | [double](#double) |  |  |
-| operator_second | [double](#double) | optional |  |
+| operator_second | [double](#double) |  |  |
 | map | [google.protobuf.Struct](#google-protobuf-Struct) |  |  |
 
 
