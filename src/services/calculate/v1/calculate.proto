@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package services.calculate.v1;
 
+import "google/protobuf/struct.proto";
 import "calculator/v1/calculator.proto";
 
 service CalculateService {
@@ -14,6 +15,7 @@ message AdditionRequest {
   calculator.v1.Operation operation = 1;
   double operator_first = 2;
   double operator_second = 3;
+  google.protobuf.Struct map = 4;
 }
 
 message AdditionResponse {

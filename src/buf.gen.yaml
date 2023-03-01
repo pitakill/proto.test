@@ -37,12 +37,12 @@ plugins:
     opt: grpc_js
 
   # Java
-  - name: java
-    out: ../java/src/main/java
-
-  - name: grpc_java
-    out: ../java/src/main/java
-    path: ../protoc-gen-grpc-java
+  # - name: java
+  #   out: ../java/src/main/java
+  #
+  # - name: grpc_java
+  #   out: ../java/src/main/java
+  #   path: ../protoc-gen-grpc-java
 
   # Go
   - plugin: buf.build/protocolbuffers/go:v1.28.1
